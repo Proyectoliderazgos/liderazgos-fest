@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Liderazgos fest 2027</title>
 <meta name="description" content="Liderazgos fest. Democracias convulsionadas. 5 y 6 de mayo de 2027, Universidad Nacional de San Martín. Primera circular y convocatoria a propuestas.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Fraunces:ital,opsz,wght@1,9..144,800&display=swap">
 <!-- Vista previa al compartir el enlace -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:title" content="Liderazgos fest · Democracias convulsionadas">
 <meta property="og:description" content="5 y 6 de mayo de 2027, Universidad Nacional de San Martín. Primera circular y convocatoria a propuestas.">
 <meta property="og:url" content="https://proyectoliderazgos.github.io/liderazgos-fest/">
-<meta property="og:image" content="https://proyectoliderazgos.github.io/liderazgos-fest/og.jpg">
+<meta property="og:image" content="https://proyectoliderazgos.github.io/liderazgos-fest/og.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Liderazgos fest. Democracias convulsionadas. 5 y 6 de mayo de 2027, UNSAM.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://proyectoliderazgos.github.io/liderazgos-fest/">
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Fraunces:ital,opsz,wght@1,9..144,800&display=swap">
+<style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%}
 [hidden]{display:none!important}
@@ -259,6 +259,38 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
 .to-top svg{width:22px;height:22px}
 .to-top:focus-visible{outline-color:var(--focus)}
 .toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);max-width:calc(100% - 32px);background:var(--brand-brown);color:var(--brand-cream);padding:.6rem 1rem;border-radius:999px;font-weight:700;z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.25);text-align:center}
+
+/* ---------- Remolino vivo ---------- */
+.swirl-box{position:absolute;top:50%;right:-6%;transform:translateY(-50%);height:112%;aspect-ratio:1000/1200;z-index:1}
+.swirl-box canvas,.swirl-box .swirl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.swirl-box .swirl{transform:none;top:0;right:0;max-width:none;object-fit:cover}
+.swirl-box.live .swirl{visibility:hidden}
+.swirl-box canvas{touch-action:pan-y}
+.motion-ctl{position:absolute;z-index:4;right:max(16px,calc(env(safe-area-inset-right,0px) + 16px));bottom:16px;display:flex;align-items:center;gap:.5rem;background:var(--brand-brown);color:var(--brand-cream);border-radius:999px;padding:.45rem .9rem;font-size:var(--step--1);font-weight:500;box-shadow:0 4px 14px rgba(59,26,6,.25)}
+.motion-ctl[hidden]{display:none!important}
+.motion-ctl{pointer-events:none}
+.motion-ctl .pause{min-height:40px;min-width:40px;border-radius:999px;border:0;background:var(--brand-cream);color:var(--brand-brown);font:inherit;font-weight:700;padding:0 .8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+.motion-ctl .pause:focus-visible{outline:3px solid var(--brand-cream);outline-offset:2px}
+.pause svg{width:14px;height:14px}
+@media (max-width:760px){
+  .swirl-box{position:relative;top:auto;right:auto;transform:none;width:100%;height:170px;aspect-ratio:auto}
+  .swirl-box .swirl{object-position:left 40%}
+  .motion-ctl{top:118px;bottom:auto;right:max(12px,calc(env(safe-area-inset-right,0px) + 12px))}
+  .motion-ctl{display:none!important}
+}
+
+/* ---------- Cinta ondulada ---------- */
+.ribbon{position:relative;background:var(--bg);border-bottom:1px solid var(--line);overflow:hidden}
+.ribbon>svg{display:block;width:100%;height:150px}
+.ribbon use{fill:none}
+.ribbon .band{fill:none;stroke:var(--brand-pink);stroke-width:62;stroke-linecap:butt}
+.ribbon .band-shadow{fill:none;stroke:var(--brand-yellow);stroke-width:62}
+.ribbon .band-edge{fill:none;stroke:var(--brand-brown);stroke-width:68}
+.ribbon text{font-family:var(--font-display);font-size:27px;fill:var(--brand-cream);letter-spacing:.04em}
+.ribbon-bar{display:flex;justify-content:flex-end;padding:0 max(16px,env(safe-area-inset-right,0px)) .7rem max(16px,env(safe-area-inset-left,0px));min-height:0}
+.ribbon .pause{min-height:40px;min-width:40px;border-radius:999px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);font:inherit;font-size:var(--step--1);font-weight:700;padding:0 .8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+.ribbon .pause[hidden]{display:none!important}
+@media (max-width:560px){.ribbon>svg{height:120px}.ribbon text{font-size:22px}.ribbon .band,.ribbon .band-shadow{stroke-width:50}.ribbon .band-edge{stroke-width:56}}
 </style>
 </head>
 <body>
@@ -280,7 +312,12 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
       <a class="btn btn-ghost" href="#fechas">Ver fechas</a>
     </div>
   </div></div>
-  <img class="swirl" src="swirl.webp" alt="" width="1000" height="1200" decoding="async">
+  <div class="swirl-box" id="swirl-box" aria-hidden="true">
+    <img class="swirl" src="swirl.webp" alt="" width="1000" height="1200" decoding="async">
+  </div>
+  <div class="motion-ctl" id="motion-ctl" hidden>
+    <span class="hint">Agitá el remolino con el cursor o el dedo</span>
+  </div>
 </header>
 
 <nav class="toc" aria-label="Secciones de la página">
@@ -379,6 +416,16 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
     </div>
   </section>
 
+<div class="ribbon" id="ribbon">
+    <svg id="ribbon-svg" focusable="false" aria-hidden="true">
+      <defs><path id="ribbon-path" d=""/></defs>
+      <use href="#ribbon-path" class="band-edge"/>
+      <use href="#ribbon-path" class="band-shadow" transform="translate(5,6)"/>
+      <use href="#ribbon-path" class="band"/>
+      <text dy="9"><textPath id="ribbon-text" href="#ribbon-path"></textPath></text>
+    </svg>
+  </div>
+  
   <section id="ejes" aria-labelledby="t-ejes">
     <div class="wrap">
       <div class="sec-head">
@@ -535,10 +582,10 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
           <p class="bio placeholder">Bio breve: dos o tres líneas sobre su trabajo.</p>
         </li>
         <li class="person">
-             <div class="photo"><img src="federico-fort.webp" alt="Foto de Federico Fort" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="photo"><img src="federico-fort.webp" alt="Foto de Federico Fort" width="400" height="400" loading="lazy" decoding="async"></div>
           <h3>Federico Fort</h3>
           <p class="role">Pertenencia institucional</p>
-          <p class="bio placeholder">Dr. en Ciencias Sociales. Becario posdoc del IDAES (unsam). Especialista en estudios visuales.</p>
+          <p class="bio placeholder">Bio breve: dos o tres líneas sobre su trabajo.</p>
         </li>
         <li class="person">
           <div class="photo"><span aria-hidden="true">AC</span></div>
@@ -655,6 +702,134 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
     window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});
     var skip=document.querySelector(".skip"); setTimeout(function(){document.getElementById("inicio").querySelector("a").focus({preventScroll:true})},reduce?0:400);
   });
+})();
+</script>
+<script>
+/* Remolino vivo (WebGL) y cinta ondulada. Se detienen con "Pausar", fuera de pantalla y si el sistema pide reducir el movimiento. */
+(function(){
+  var mq=window.matchMedia?window.matchMedia("(prefers-reduced-motion: reduce)"):null;
+  var reduced=!!(mq&&mq.matches);
+  var paused=false; 
+  if(reduced) return;   /* queda la imagen fija y la cinta estática */
+  var toggles=[].slice.call(document.querySelectorAll("[data-motion-toggle]"));
+  var PAUSE_SVG='<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" rx="1" fill="currentColor"/></svg>';
+  var PLAY_SVG='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>';
+  function syncButtons(){toggles.forEach(function(b){b.setAttribute("aria-pressed",String(paused));b.innerHTML=(paused?PLAY_SVG:PAUSE_SVG)+"<span>"+(paused?"Animar":"Pausar")+"</span>";b.setAttribute("aria-label",paused?"Reanudar animaciones":"Pausar animaciones")})}
+  toggles.forEach(function(b){b.hidden=false;b.addEventListener("click",function(){paused=!paused;try{localStorage.setItem("lf-motion",paused?"off":"on")}catch(e){};syncButtons();kick()})});
+  document.getElementById("motion-ctl").hidden=false;
+  syncButtons();
+
+  /* ---------- Remolino ---------- */
+  var box=document.getElementById("swirl-box");
+  var canvas=document.createElement("canvas");
+  var gl=null;
+  try{gl=canvas.getContext("webgl",{premultipliedAlpha:true,alpha:true,antialias:false})}catch(e){}
+  var swirl=null;
+  if(gl){
+    var vs="attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}";
+    var fs=[
+"precision highp float;",
+"uniform vec2 uRes;uniform float uScale;uniform vec2 uOff;uniform float uT;uniform vec2 uM;uniform float uE;uniform float uPx;",
+"vec3 C0=vec3(.776,.314,.596);vec3 C1=vec3(1.,.941,.839);vec3 C2=vec3(.875,.867,.098);vec3 C3=vec3(.91,.439,.165);",
+"vec3 col(float i){float k=mod(i,5.);if(k<.5)return C0;if(k<1.5)return C1;if(k<2.5)return C2;if(k<3.5)return C3;return C1;}",
+"void main(){",
+" vec2 f=vec2(gl_FragCoord.x,uRes.y-gl_FragCoord.y);",
+" vec2 p=(f-uOff)/uScale;",
+" vec2 d=vec2(p.x-970.,(p.y-624.)*1.05);",
+" float r=length(d);float a=atan(d.y,d.x);",
+" r+=55.*sin(3.*a+r/220.+uT*.35)+26.*sin(p.y/1200.*9.42+uT*.5)+10.*sin(a*5.-uT*.6);",
+" vec2 m=(uM-uOff)/uScale;float dm=distance(p,m);",
+" r+=uE*80.*exp(-dm*dm/(2.*190.*190.))*sin(dm/34.-uT*4.2);",
+" float R=780.;float bw=78.;",
+" float v=(R-r)/bw;float i=floor(v);float fr=fract(v);",
+" float aa=uPx/bw*1.2;",
+" vec3 c=mix(col(i-1.),col(i),smoothstep(0.,aa,fr));",
+" float al=clamp((R-r)/(uPx*1.2),0.,1.);",
+" float g=fract(sin(dot(floor(gl_FragCoord.xy),vec2(12.9898,78.233)))*43758.5453)-.5;",
+" c=clamp(c+g*.13,0.,1.);",
+" gl_FragColor=vec4(c*al,al);",
+"}"].join("\n");
+    function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null}
+    var v=sh(gl.VERTEX_SHADER,vs),fr=sh(gl.FRAGMENT_SHADER,fs);
+    if(v&&fr){
+      var pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,fr);gl.linkProgram(pr);
+      if(gl.getProgramParameter(pr,gl.LINK_STATUS)){
+        gl.useProgram(pr);
+        var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+        var loc=gl.getAttribLocation(pr,"a");gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+        var U={};["uRes","uScale","uOff","uT","uM","uE","uPx"].forEach(function(n){U[n]=gl.getUniformLocation(pr,n)});
+        swirl={U:U};
+      }
+    }
+  }
+  var dpr=1,W=0,H=0,scale=1,off=[0,0];
+  function layout(){
+    var rc=box.getBoundingClientRect();
+    dpr=Math.min(window.devicePixelRatio||1,1.5);
+    W=Math.max(1,Math.round(rc.width*dpr));H=Math.max(1,Math.round(rc.height*dpr));
+    canvas.width=W;canvas.height=H;
+    var s=Math.max(W/1000,H/1200);scale=s;
+    var narrow=rc.width>rc.height*1.2;
+    off=[(W-1000*s)*0,(H-1200*s)*(narrow?0.4:0.5)];
+    if(gl) gl.viewport(0,0,W,H);
+  }
+  var mouse=[-9999,-9999],energy=0,t0=performance.now(),tAcc=0,last=0,visible=true,raf=0;
+  if(swirl){
+    box.appendChild(canvas);box.classList.add("live");
+    layout();window.addEventListener("resize",function(){layout();draw(tAcc)});
+    var hero=document.querySelector(".hero");
+    function setM(x,y,boost){var rc=box.getBoundingClientRect();var nx=(x-rc.left)*dpr,ny=(y-rc.top)*dpr;
+      var dx=nx-mouse[0],dy=ny-mouse[1];mouse=[nx,ny];energy=Math.min(1,energy+(boost||Math.min(.12,Math.hypot(dx,dy)/(900*dpr))));kick()}
+    hero.addEventListener("pointermove",function(e){setM(e.clientX,e.clientY)},{passive:true});
+    hero.addEventListener("pointerdown",function(e){setM(e.clientX,e.clientY,.6)},{passive:true});
+    hero.addEventListener("touchmove",function(e){var t=e.touches[0];if(t)setM(t.clientX,t.clientY)},{passive:true});
+  }
+  function draw(t){
+    if(!swirl) return;
+    var U=swirl.U;
+    gl.uniform2f(U.uRes,W,H);gl.uniform1f(U.uScale,scale);gl.uniform2f(U.uOff,off[0],off[1]);
+    gl.uniform1f(U.uT,t);gl.uniform2f(U.uM,mouse[0],mouse[1]);gl.uniform1f(U.uE,energy);gl.uniform1f(U.uPx,1/scale);
+    gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+  }
+
+  /* ---------- Cinta ---------- */
+  var rsvg=document.getElementById("ribbon-svg"),rpath=document.getElementById("ribbon-path"),rtext=document.getElementById("ribbon-text");
+  var PHRASE="LIDERAZGOS POLÍTICOS ACTUALES ✦ LIDERAZGOS E IMÁGENES ✦ LIDERAZGOS INTELECTUALES ✦ LIDERAZGOS Y CIENCIAS OCULTAS ✦ ";
+  var repLen=0,rOff=0,rW=0;
+  function ribbonLayout(){
+    var rc=rsvg.getBoundingClientRect();rW=Math.max(320,rc.width);var h=rc.height;
+    rsvg.setAttribute("viewBox","0 0 "+rW+" "+h);
+    var amp=h*0.2,mid=h/2,wl=Math.max(420,rW/2.2),d="M "+(-wl)+" "+mid;
+    for(var x=-wl;x<rW+wl*2;x+=wl/2){var cx=x+wl/4,ex=x+wl/2,cy=(Math.round((x+wl)/(wl/2))%2===0)?mid-amp*2:mid+amp*2;d+=" Q "+cx+" "+cy+" "+ex+" "+mid}
+    rpath.setAttribute("d",d);
+    rtext.textContent=PHRASE;repLen=rtext.getComputedTextLength()||1000;
+    var L=rpath.getTotalLength(),n=Math.ceil((L+repLen*2)/repLen);
+    rtext.textContent=new Array(n+1).join(PHRASE);
+  }
+  ribbonLayout();window.addEventListener("resize",ribbonLayout);
+  
+  function ribbonStep(dt){rOff=(rOff+dt*42)%repLen;rtext.setAttribute("startOffset",String(-rOff))}
+  rtext.setAttribute("startOffset","0");
+
+  /* ---------- Bucle ---------- */
+  var onScreen={hero:true,ribbon:true};
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){onScreen[e.target===box?"hero":"ribbon"]=e.isIntersecting});kick()});
+    io.observe(box);io.observe(document.getElementById("ribbon"));
+  }
+  function frame(now){
+    raf=0;
+    var dt=Math.min(.05,(now-last)/1000);last=now;
+    if(paused){return}
+    tAcc+=dt;
+    if(onScreen.hero&&swirl){energy*=Math.pow(.25,dt);draw(tAcc)}
+    if(onScreen.ribbon) ribbonStep(dt);
+    if(!document.hidden&&(onScreen.hero||onScreen.ribbon)) raf=requestAnimationFrame(frame);
+  }
+  function kick(){if(!raf&&!paused){last=performance.now();raf=requestAnimationFrame(frame)}}
+  document.addEventListener("visibilitychange",kick);
+  if(mq&&mq.addEventListener) mq.addEventListener("change",function(e){if(e.matches){paused=true;syncButtons()}});
+  draw(0);kick();
 })();
 </script>
 </body>
