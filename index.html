@@ -279,6 +279,30 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
 .ribbon .pause{min-height:40px;min-width:40px;border-radius:999px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);font:inherit;font-size:var(--step--1);font-weight:700;padding:0 .8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
 .ribbon .pause[hidden]{display:none!important}
 @media (max-width:560px){.ribbon>svg{height:120px}.ribbon text{font-size:22px}.ribbon .band,.ribbon .band-shadow{stroke-width:50}.ribbon .band-edge{stroke-width:56}}
+
+/* Ejes desplegables */
+.ejes{align-items:start}
+.ejes li{display:block;padding:0}
+.eje>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--radius)}
+.eje>summary::-webkit-details-marker{display:none}
+.eje>summary:hover{background:var(--chip)}
+.flecha{width:.7rem;height:.7rem;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg) translateY(-3px);transition:transform .2s}
+.eje[open] .flecha{transform:rotate(-135deg) translateY(-3px)}
+.eje-desc{padding:0 1.2rem 1.2rem calc(1.2rem + 3.2rem + 1rem);color:var(--muted);font-size:var(--step--1);line-height:1.6}
+@media (max-width:560px){.eje-desc{padding-left:1.2rem}}
+
+/* Circulares */
+.docs{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;max-width:44rem}
+.doc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+a.doc:hover{background:var(--chip);border-color:var(--ink)}
+.doc-ico{width:3rem;height:3.6rem;border-radius:6px;display:grid;place-items:center;font-weight:700;font-size:.8rem;letter-spacing:.06em;background:var(--brand-pink);color:#fff}
+.doc-text{display:grid;gap:.1rem;min-width:0}
+.doc-text strong{font-size:var(--step-1);line-height:1.2}
+.doc-meta{font-size:var(--step--1);color:var(--muted)}
+.doc-go{font-weight:700;font-size:var(--step--1);display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
+.doc-go::after{content:"↗"}
+.doc-soon{border-style:dashed;background:transparent}
+.doc-soon .doc-ico{background:var(--line);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -316,6 +340,7 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
       <li><a href="#participar">Cómo participar</a></li>
       <li><a href="#ejes">Ejes</a></li>
       <li><a href="#formatos">Formatos</a></li>
+      <li><a href="#circulares">Circulares</a></li>
       <li><a href="#comite">Comité</a></li>
       <li><a href="#consultas">Consultas</a></li>
     </ul>
@@ -420,13 +445,49 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
     <div class="wrap">
       <div class="sec-head">
         <h2 id="t-ejes">Cuatro ejes temáticos</h2>
-        <p>Cada eje es un espacio de conversación. Elegí en cuál se inscribe tu propuesta.</p>
+        <p>Cada eje es un espacio de conversación. Tocá cada uno para leer de qué se trata.</p>
       </div>
       <ol class="ejes">
-        <li><span class="n" aria-hidden="true">1</span><span><span class="tag">Espacio 1</span><strong>Liderazgos políticos actuales</strong></span></li>
-        <li><span class="n" aria-hidden="true">2</span><span><span class="tag">Espacio 2</span><strong>Liderazgos e imágenes</strong></span></li>
-        <li><span class="n" aria-hidden="true">3</span><span><span class="tag">Espacio 3</span><strong>Liderazgos intelectuales</strong></span></li>
-        <li><span class="n" aria-hidden="true">4</span><span><span class="tag">Espacio 4</span><strong>Liderazgos y ciencias ocultas</strong></span></li>
+        <li>
+          <details class="eje">
+            <summary>
+              <span class="n" aria-hidden="true">1</span>
+              <span><span class="tag">Espacio 1</span><strong>Liderazgos políticos actuales</strong></span>
+              <span class="flecha" aria-hidden="true"></span>
+            </summary>
+            <p class="eje-desc">Reúne trabajos sobre las jefaturas políticas contemporáneas y el vínculo que las une con sus adherentes. Interesan las emociones que ese vínculo moviliza, las narrativas que lo sostienen y su construcción a través de redes sociales y formatos comunicacionales alternativos. Invitamos también a pensar cómo intervienen los legados históricos y la coyuntura en la emergencia de estos liderazgos.</p>
+          </details>
+        </li>
+        <li>
+          <details class="eje">
+            <summary>
+              <span class="n" aria-hidden="true">2</span>
+              <span><span class="tag">Espacio 2</span><strong>Liderazgos e imágenes</strong></span>
+              <span class="flecha" aria-hidden="true"></span>
+            </summary>
+            <p class="eje-desc">Retratos oficiales, afiches de campaña, memes, transmisiones en vivo e imágenes generadas con inteligencia artificial participan en la manera en que un liderazgo construye autoridad, cercanía y adhesión. Proponemos preguntarnos cómo se fabrican y se ponen en escena esas imágenes, cómo circulan y se viralizan, cómo las reapropian quienes las miran y qué iconografías del pasado reaparecen en ellas. Alentamos especialmente propuestas en videopodcast y storytelling, formatos que permiten pensar la imagen con imágenes.</p>
+          </details>
+        </li>
+        <li>
+          <details class="eje">
+            <summary>
+              <span class="n" aria-hidden="true">3</span>
+              <span><span class="tag">Espacio 3</span><strong>Liderazgos intelectuales</strong></span>
+              <span class="flecha" aria-hidden="true"></span>
+            </summary>
+            <p class="eje-desc">Se ocupa de quienes ejercen influencia desde el pensamiento y la palabra pública: intelectuales, académicos, periodistas, divulgadores y figuras que ordenan debates desde plataformas digitales. Buscamos analizar cómo se construye esa autoridad, qué relación mantiene con los liderazgos políticos y qué cambia cuando la voz intelectual circula en podcasts, streams y redes.</p>
+          </details>
+        </li>
+        <li>
+          <details class="eje">
+            <summary>
+              <span class="n" aria-hidden="true">4</span>
+              <span><span class="tag">Espacio 4</span><strong>Liderazgos y ciencias ocultas</strong></span>
+              <span class="flecha" aria-hidden="true"></span>
+            </summary>
+            <p class="eje-desc">La astrología, el tarot, la numerología, las consultas espirituales y otros “saberes ocultos” forman parte, en algunos casos, de las decisiones y de la puesta en escena de ciertos líderes. Este eje invita a rastrear el lugar del esoterismo en la política, en el presente y en la historia, y a preguntarse qué legitimidad otorga y qué revela sobre la relación entre líderes y seguidores.</p>
+          </details>
+        </li>
       </ol>
     </div>
   </section>
@@ -503,6 +564,33 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
     </div>
   </section>
 
+  <section id="circulares" aria-labelledby="t-circ">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="t-circ">Circulares</h2>
+        <p>Acá vas a encontrar todas las circulares del workshop en PDF.</p>
+      </div>
+      <ul class="docs">
+        <!-- Para agregar una circular: subí el PDF al repositorio y copiá uno de estos bloques <li>.
+             Cambiá el nombre del archivo en href, el título y la fecha. -->
+        <li>
+          <a class="doc" href="primera-circular.pdf" target="_blank" rel="noopener">
+            <span class="doc-ico" aria-hidden="true">PDF</span>
+            <span class="doc-text"><strong>Primera circular</strong><span class="doc-meta">PDF · 100 KB</span></span>
+            <span class="doc-go" aria-hidden="true">Abrir</span>
+            <span class="sr-only"> (PDF, se abre en una pestaña nueva)</span>
+          </a>
+        </li>
+        <li>
+          <div class="doc doc-soon">
+            <span class="doc-ico" aria-hidden="true">PDF</span>
+            <span class="doc-text"><strong>Segunda circular</strong><span class="doc-meta">Próximamente: plazos y aranceles</span></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section id="comite" aria-labelledby="t-com">
     <div class="wrap">
       <div class="sec-head"><h2 id="t-com">Comité organizador</h2></div>
@@ -528,8 +616,8 @@ footer strong{font-family:var(--font-display);font-weight:400;font-size:var(--st
         <li class="person">
           <div class="photo"><img src="federico-fort.webp" alt="Foto de Federico Fort" width="400" height="400" loading="lazy" decoding="async"></div>
           <h3>Federico Fort</h3>
-          <p class="role">EIDAES_UNSAM</p>
-          <p class="bio placeholder">Dr. en Ciencias Sociales. Especialista en cultura visual, archivo e IA</p>
+          <p class="role">Pertenencia institucional</p>
+          <p class="bio placeholder">Bio breve: dos o tres líneas sobre su trabajo.</p>
         </li>
         <li class="person">
           <div class="photo"><span aria-hidden="true">AC</span></div>
